@@ -10,7 +10,7 @@
   "editor.quickSuggestions": {
     "strings": "on",
     "other": "on",
-    "comments": "off",
+    "comments": "off"
   },
   "editor.wordWrap": "on",
   "editor.accessibilitySupport": "off",
@@ -64,7 +64,7 @@
   "terminal.integrated.commandsToSkipShell": [
     "kilo-code.new.agentManagerOpen",
     "kilo-code.new.agentManager.showTerminal",
-    "kilo-code.new.agentManager.runScript",
+    "kilo-code.new.agentManager.runScript"
   ],
 
   // ========== Git ==========
@@ -99,6 +99,10 @@
   "explorer.confirmDragAndDrop": false,
   "explorer.fileNesting.enabled": true,
   "explorer.fileNesting.expand": false,
+  "explorer.fileNesting.patterns": {
+    "vite.config.*": "*.env, .babelrc*, .codecov, .cssnanorc*, .env.*, .envrc, .htmlnanorc*, .lighthouserc.*, .mocha*, .postcssrc*, .terserrc*, api-extractor.json, ava.config.*, babel.config.*, contentlayer.config.*, cssnano.config.*, cypress.*, env.d.ts, formkit.config.*, formulate.config.*, jest.config.*, jsconfig.*, karma.config.*, lighthouserc.*, playwright.config.*, postcss.config.*, puppeteer.config.*, svgo.config.*, tailwind.config.*, tsconfig.*, vitest.config.*, webpack.config.*, windi.config.*",
+    "package.json": ".browserslistrc, .circleci*, .commitlintrc*, .editorconfig, .eslint*, .firebase*, .flowconfig, .github*, .gitlab*, .gitpod*, .husky*, .jslint*, .lintstagedrc*, .markdownlint*, .node-version, .npm*, .nycrc*, .pnpm*, .prettier*, .releaserc*, .sentry*, .stackblitz*, .stylelint*, .travis*, .vscode*, .watchman*, .yamllint*, .yarnrc*, bower.json, build.config.*, commitlint*, crowdin*, dangerfile*, lerna.json, nx.json, package-lock.json, pnpm-*, pullapprove*, pyproject.toml, release-tasks.sh, renovate*, rollup.config.*, security.md, tsconfig*, turbo.json, vercel.*, vitest.config.*, yarn.lock"
+  },
 
   // ========== Search ==========
   "search.showLineNumbers": true,
@@ -107,13 +111,13 @@
   "search.exclude": {
     "**/node_modules": true,
     "**/dist": true,
-    "**/coverage": true,
+    "**/coverage": true
   },
 
   // ========== Files ==========
   "files.associations": {
     "*.css": "tailwindcss",
-    "*.form": "xml",
+    "*.form": "xml"
   },
   "files.watcherExclude": {
     "**/node_modules/**": true,
@@ -122,7 +126,7 @@
     "**/.git/subtree-cache/**": true,
     "**/node_modules/*/**": true,
     "**/build/**": true,
-    "**/.next/**": true,
+    "**/.next/**": true
   },
   "files.eol": "\n",
   "files.trimTrailingWhitespace": true,
@@ -130,7 +134,12 @@
 
   // ========== Extension Specific Settings ==========
 
-  // Indent Rainbow (Making it subtle so it doesn't look like a circus)
+  // Vite (antfu.vite)
+  "vite.autoStart": true,
+  "vite.open": true,
+  "vite.command": "npm run dev",
+
+  // Indent Rainbow
   "indentRainbow.colors": ["rgba(255,255,255,0.03)", "rgba(255,255,255,0.06)"],
   "indentRainbow.errorColor": "rgba(128,0,0,0.2)",
 
@@ -139,7 +148,7 @@
   "material-icon-theme.folders.theme": "specific",
   "material-icon-theme.folders.color": "#6272a4",
 
-  // Code Spell Checker (Linking English & Swedish)
+  // Code Spell Checker
   "cSpell.language": "en,sv-SE",
   "cSpell.checkOnlyEnabledFileTypes": true,
 
@@ -147,10 +156,10 @@
   "tailwindCSS.classAttributes": ["class", "ui", "className"],
   "tailwindCSS.includeLanguages": {
     "typescript": "javascript",
-    "typescriptreact": "javascript",
+    "typescriptreact": "javascript"
   },
   "tailwindCSS.experimental.classRegex": [
-    ["ui:\\s*{([^)]*)\\s*}", "(?:'|\"|`)([^']*)(?:'|\\\"|`)"],
+    ["ui:\\s*{([^)]*)\\s*}", "(?:'|\\\"|`)([^']*)(?:'|\\\"|`)"]
   ],
 
   // AI & Chat
@@ -167,7 +176,7 @@
 
   // ESLint (Antfu Config)
   "eslint.codeAction.showDocumentation": {
-    "enable": true,
+    "enable": true
   },
   "eslint.quiet": true,
   "eslint.rules.customizations": [
@@ -180,7 +189,7 @@
     { "rule": "*-dangle", "severity": "off" },
     { "rule": "*-newline", "severity": "off" },
     { "rule": "*quotes", "severity": "off" },
-    { "rule": "*semi", "severity": "off" },
+    { "rule": "*semi", "severity": "off" }
   ],
   "eslint.validate": [
     "javascript",
@@ -193,7 +202,7 @@
     "json",
     "jsonc",
     "yaml",
-    "toml",
+    "toml"
   ],
 
   // ========== Java ==========
@@ -202,7 +211,7 @@
   "[java]": {
     "editor.defaultFormatter": "redhat.java",
     "editor.formatOnSave": true,
-    "editor.tabSize": 4,
+    "editor.tabSize": 4
   },
 
   // ========== XML ==========
@@ -210,6 +219,6 @@
   "[xml]": {
     "editor.defaultFormatter": "redhat.vscode-xml",
     "editor.formatOnSave": true,
-    "editor.tabSize": 2,
-  },
+    "editor.tabSize": 2
+  }
 }
