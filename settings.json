@@ -10,7 +10,7 @@
   "editor.quickSuggestions": {
     "strings": "on",
     "other": "on",
-    "comments": "off"
+    "comments": "off",
   },
   "editor.wordWrap": "on",
   "editor.accessibilitySupport": "off",
@@ -64,7 +64,7 @@
   "terminal.integrated.commandsToSkipShell": [
     "kilo-code.new.agentManagerOpen",
     "kilo-code.new.agentManager.showTerminal",
-    "kilo-code.new.agentManager.runScript"
+    "kilo-code.new.agentManager.runScript",
   ],
 
   // ========== Git ==========
@@ -73,7 +73,6 @@
   "git.confirmSync": false,
   "git.enableSmartCommit": true,
   "git.autofetch": true,
-  "git.enableCommitSigning": true,
   "git.fetchOnPull": true,
   "git.pruneOnFetch": true,
   "git.untrackedChanges": "separate",
@@ -87,11 +86,24 @@
   "workbench.activityBar.location": "bottom",
   "workbench.navigationControl.enabled": false,
   "workbench.layoutControl.enabled": false,
-  "workbench.colorCustomizations": {},
   "workbench.editor.editorActionsLocation": "titleBar",
   "workbench.secondarySideBar.defaultVisibility": "hidden",
   "workbench.colorTheme": "Ayu Dark Bordered",
   "settingsSync.ignoredSettings": [],
+  "workbench.editor.tabSizing": "shrink",
+  "workbench.editor.labelFormat": "short",
+  "workbench.editor.highlightModifiedTabs": true,
+  "workbench.colorCustomizations": {
+    // The Active Tab
+    "tab.activeBorderTop": "#00000000",
+    "tab.activeForeground": "#5ccfe6",
+    "tab.activeBackground": "#1d242c57",
+    "tab.inactiveBackground": "#0f1419",
+    "tab.inactiveForeground": "#5c6773",
+    "editorGroupHeader.tabsBackground": "#0f1419",
+    "editorGroupHeader.border": "#00000000",
+    "tab.border": "#00000000",
+  },
 
   // ========== Explorer ==========
   "explorer.compactFolders": false,
@@ -101,7 +113,7 @@
   "explorer.fileNesting.expand": false,
   "explorer.fileNesting.patterns": {
     "vite.config.*": "*.env, .babelrc*, .codecov, .cssnanorc*, .env.*, .envrc, .htmlnanorc*, .lighthouserc.*, .mocha*, .postcssrc*, .terserrc*, api-extractor.json, ava.config.*, babel.config.*, contentlayer.config.*, cssnano.config.*, cypress.*, env.d.ts, formkit.config.*, formulate.config.*, jest.config.*, jsconfig.*, karma.config.*, lighthouserc.*, playwright.config.*, postcss.config.*, puppeteer.config.*, svgo.config.*, tailwind.config.*, tsconfig.*, vitest.config.*, webpack.config.*, windi.config.*",
-    "package.json": ".browserslistrc, .circleci*, .commitlintrc*, .editorconfig, .eslint*, .firebase*, .flowconfig, .github*, .gitlab*, .gitpod*, .husky*, .jslint*, .lintstagedrc*, .markdownlint*, .node-version, .npm*, .nycrc*, .pnpm*, .prettier*, .releaserc*, .sentry*, .stackblitz*, .stylelint*, .travis*, .vscode*, .watchman*, .yamllint*, .yarnrc*, bower.json, build.config.*, commitlint*, crowdin*, dangerfile*, lerna.json, nx.json, package-lock.json, pnpm-*, pullapprove*, pyproject.toml, release-tasks.sh, renovate*, rollup.config.*, security.md, tsconfig*, turbo.json, vercel.*, vitest.config.*, yarn.lock"
+    "package.json": ".browserslistrc, .circleci*, .commitlintrc*, .editorconfig, .eslint*, .firebase*, .flowconfig, .github*, .gitlab*, .gitpod*, .husky*, .jslint*, .lintstagedrc*, .markdownlint*, .node-version, .npm*, .nycrc*, .prettier*, .releaserc*, .sentry*, .stackblitz*, .stylelint*, .travis*, .vscode*, .watchman*, .yamllint*, .yarnrc*, bower.json, build.config.*, commitlint*, crowdin*, dangerfile*, lerna.json, nx.json, package-lock.json, pullapprove*, pyproject.toml, release-tasks.sh, renovate*, rollup.config.*, security.md, tsconfig*, turbo.json, vercel.*, vitest.config.*, yarn.lock, app.json, eas.json, expo-env.d.ts",
   },
 
   // ========== Search ==========
@@ -111,13 +123,15 @@
   "search.exclude": {
     "**/node_modules": true,
     "**/dist": true,
-    "**/coverage": true
+    "**/coverage": true,
   },
 
   // ========== Files ==========
   "files.associations": {
     "*.css": "tailwindcss",
-    "*.form": "xml"
+    "*.form": "xml",
+    "app.config.js": "javascript",
+    "app.json": "jsonc",
   },
   "files.watcherExclude": {
     "**/node_modules/**": true,
@@ -126,7 +140,8 @@
     "**/.git/subtree-cache/**": true,
     "**/node_modules/*/**": true,
     "**/build/**": true,
-    "**/.next/**": true
+    "**/.next/**": true,
+    "**/.expo/**": true,
   },
   "files.eol": "\n",
   "files.trimTrailingWhitespace": true,
@@ -134,10 +149,9 @@
 
   // ========== Extension Specific Settings ==========
 
-  // Vite (antfu.vite)
+  // Vite
   "vite.autoStart": true,
   "vite.open": true,
-  "vite.command": "npm run dev",
 
   // Indent Rainbow
   "indentRainbow.colors": ["rgba(255,255,255,0.03)", "rgba(255,255,255,0.06)"],
@@ -156,10 +170,10 @@
   "tailwindCSS.classAttributes": ["class", "ui", "className"],
   "tailwindCSS.includeLanguages": {
     "typescript": "javascript",
-    "typescriptreact": "javascript"
+    "typescriptreact": "javascript",
   },
   "tailwindCSS.experimental.classRegex": [
-    ["ui:\\s*{([^)]*)\\s*}", "(?:'|\\\"|`)([^']*)(?:'|\\\"|`)"]
+    ["ui:\\s*{([^)]*)\\s*}", "(?:'|\\\"|`)([^']*)(?:'|\\\"|`)"],
   ],
 
   // AI & Chat
@@ -174,10 +188,8 @@
   "js/ts.suggest.autoImports": true,
   "js/ts.preferences.preferTypeOnlyAutoImports": true,
 
-  // ESLint (Antfu Config)
-  "eslint.codeAction.showDocumentation": {
-    "enable": true
-  },
+  // ESLint
+  "eslint.codeAction.showDocumentation": { "enable": true },
   "eslint.quiet": true,
   "eslint.rules.customizations": [
     { "rule": "style/*", "severity": "off" },
@@ -189,7 +201,7 @@
     { "rule": "*-dangle", "severity": "off" },
     { "rule": "*-newline", "severity": "off" },
     { "rule": "*quotes", "severity": "off" },
-    { "rule": "*semi", "severity": "off" }
+    { "rule": "*semi", "severity": "off" },
   ],
   "eslint.validate": [
     "javascript",
@@ -202,23 +214,18 @@
     "json",
     "jsonc",
     "yaml",
-    "toml"
+    "toml",
   ],
 
-  // ========== Java ==========
-  "java.format.enabled": true,
-  "java.format.onType.enabled": false,
+  // Java & XML
   "[java]": {
     "editor.defaultFormatter": "redhat.java",
     "editor.formatOnSave": true,
-    "editor.tabSize": 4
+    "editor.tabSize": 4,
   },
-
-  // ========== XML ==========
-  "xml.format.spaceBeforeEmptyCloseTag": false,
   "[xml]": {
     "editor.defaultFormatter": "redhat.vscode-xml",
     "editor.formatOnSave": true,
-    "editor.tabSize": 2
-  }
+    "editor.tabSize": 2,
+  },
 }
