@@ -228,4 +228,5 @@
     "editor.formatOnSave": true,
     "editor.tabSize": 2,
   },
+  "terminal.integrated.initialHint": false,
 }
